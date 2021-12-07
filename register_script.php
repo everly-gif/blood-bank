@@ -35,7 +35,9 @@ if(mysqli_num_rows($unique) == 0){
     
     }
 
- 
+ else{
+    header('location:index.php');
+ }
 
 
 
@@ -68,5 +70,8 @@ if(mysqli_num_rows($unique) == 0){
         $erroralert="";
         echo "<script>alert('This aadhar number or email is already registered');window.location.href='receiver_registration.php';</script>";
     }
+    }
+    else{
+        header('location:add_blood_info.php');
     }
 ?>

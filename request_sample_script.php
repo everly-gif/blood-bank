@@ -45,4 +45,7 @@ foreach($_POST as $key => $value){
     </script>";
    }
 }
+else{
+    header('location:index.php');
+}
 ?>

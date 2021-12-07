@@ -3,6 +3,10 @@
 require 'includes/db.php';
 require 'includes/session.php';
 
+if($_SESSION['user_type']!="hospital"){
+    header('location:index.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

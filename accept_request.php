@@ -1,6 +1,7 @@
 <?php
 require 'includes/db.php';
 require 'includes/session.php';
+if(isset($_GET['type']) && isset($_GET['units']) && $_GET['sign']){
 $hospital_id=$_SESSION['user_id'];
 $users_blood_type=$_GET['type'];
 $units=$_GET['units'];
@@ -20,5 +21,9 @@ $update=$conn->query("UPDATE `blood_samples` SET `number_of_units`='$updated_uni
 if($update){
     $result=$conn->query("UPDATE `requests` SET `status`='approved' WHERE `hospital_id`='$hospital_id' AND `receiver_id`='$receiver_id'");
     header('location:view_requests.php');
+}
+}
+else{
+    header('location:index.php');
 }
 ?>

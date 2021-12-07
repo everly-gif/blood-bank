@@ -10,5 +10,7 @@ if(isset($_POST['edit_sample'])){
         header('location:add_blood_info.php');
     }
 }
-
+else{
+    header('location:index.php');
+}
 ?>

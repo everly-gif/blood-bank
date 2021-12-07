@@ -24,7 +24,7 @@ if(isset($_POST['add_sample'])){
     }
 }
 else{
-    header('location:add_blood_info.php');
+    header('location:index.php');
 }
 
 ?>
