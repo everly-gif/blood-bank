@@ -103,7 +103,6 @@ CREATE TABLE IF NOT EXISTS `receivers` (
 --
 
 INSERT INTO `receivers` (`id`, `name`, `email`, `password`, `aadhar`, `aadhar_copy`, `blood_type`, `contact`, `city`, `state`) VALUES
-(9, 'Everly Precia Suresh', 'everlyprecia@gmail.com', '$2y$10$ak0xyT8m2a2vUdxcp61A1eX.gwIa136ku9JoUg6mKulrFA5BwTgDe', '123456789012', 'registration_uploads/97-1638619422-bounce (1).jpg', 'A+', '8056255119', 'chennai', 'Tamil Nadu'),
 (10, 'xyz', 'xyz@gmail.com', '$2y$10$a/mfEdUK0nz8nx2pxuVq4uLh3pOZmh2WUbI9OQj1ippQ6b2TjSa2G', '123456789011', 'registration_uploads/22-1638861981-wave.png', 'A+', '1223335551', 'Chennai', 'Tamil Nadu');
 
 -- --------------------------------------------------------
