@@ -18,7 +18,6 @@ if(mysqli_num_rows($is_hospital)==1){
     }
     else{
     echo "<script>alert('Wrong Credentials, try again!');</script>";
-    // header('location:login.php');
     }
 }
 elseif (mysqli_num_rows($is_receiver)==1){
@@ -36,7 +35,8 @@ elseif (mysqli_num_rows($is_receiver)==1){
     header('location:blood_availability.php');
     }
     else{
-    echo "<script>if(confirm('Wrong Credentials, try again!'))
+    echo "<script>
+    if(confirm('Wrong Credentials, try again!'))
     {
         window.location.href='login.php';
     }
@@ -49,7 +49,8 @@ elseif (mysqli_num_rows($is_receiver)==1){
     }
 }
 else{
-    echo "<script>if(confirm('No such account exists! Please sign up !'))
+    echo "<script>
+    if(confirm('No such account exists! Please sign up !'))
     {
         window.location.href='index.php';
     }
@@ -58,7 +59,10 @@ else{
     }
     </script>";
     
+   }
 }
+else{
+    header('location:index.php');
 }
 
 ?>

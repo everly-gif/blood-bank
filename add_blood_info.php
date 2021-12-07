@@ -6,9 +6,6 @@ require  'includes/session.php';
  if(!isset($_SESSION) || $_SESSION['user_type']!="hospital"){
      header('location:index.php');
  }
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -18,10 +15,10 @@ require  'includes/session.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Blood Info - Blood Bank System</title>
-    <link rel="stylesheet" href="./css/navbar.css?v=<?php echo time()?>">
-    <link rel="stylesheet" href="./css/modal.css?v=<?php echo time()?>">
-    <link rel="stylesheet" href="./css/dashboard.css?v=<?php echo time()?>">
-    <link rel="stylesheet" href="./css/footer.css?v=<?php echo time()?>">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/footer.css">
 </head>
 <body>
     <?php require 'includes/header.php';?>
@@ -33,24 +30,18 @@ require  'includes/session.php';
             <th>Blood Type</th>
             <th>Units</th>
         </tr>
-        
-        
     <?php
 
     $hospital_id=$_SESSION['user_id'];
     $query=$conn->query("SELECT `id`,`blood_group`,`number_of_units`FROM `blood_samples` WHERE `hospital_id`='$hospital_id'");
-
     if(mysqli_num_rows($query)>0){
      while($data=mysqli_fetch_array($query)){
          echo '<tr><td>'.$data['blood_group'].'</td><td><span>'.
           $data['number_of_units'].'</span>   ✎<a class="edit_btn">Edit</a></td></tr>';
-     }
-
-
+      }
     }
     
     ?>
-    
     </table>
     </div>
 
@@ -65,7 +56,7 @@ require  'includes/session.php';
               <button type="submit" name="add_sample">Add Sample</button>
           </form>
      </div>
-      </div>
+    </div>
   </div>
   <div id="editModal" class="modal">
     <div class="modal-content">
@@ -78,9 +69,11 @@ require  'includes/session.php';
               <button type="submit" name="edit_sample">Update Units</button>
           </form>
      </div>
-      </div>
+    </div>
   </div>
+
   <?php require 'includes/footer.php';?>
+  
 </body>
 <script src="js/add_blood_sample.js"></script>
 </html>

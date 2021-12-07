@@ -20,21 +20,27 @@ $unique=$conn->query("SELECT * FROM `hospitals` WHERE `registration_no`='$regist
 if(mysqli_num_rows($unique) == 0){
     $result=$conn->query("INSERT INTO `hospitals` VALUES (NULL, '$name', '$type', '$services', '$registration_number', CONCAT('registration_uploads/','$filename'), '$email', '$hashed_password','$contact','$address','$city','$state')");
     if($result){
-        echo "<script>alert('Successful');window.location.href='login.php';</script>";
+        echo "<script>
+        alert('Successful');
+        window.location.href='login.php';
+        </script>";
     }
     else{
-        echo "<script>alert('Something Went Wrong :(');window.location.href='hospital_registration.php';</script>";
+        echo "<script>
+        alert('Something Went Wrong :(');
+        window.location.href='hospital_registration.php';
+        </script>";
         
-    }
+       }
     }
     else{
         $erroralert="";
-        echo "<script>alert('This Hospital registration number is already registered');window.location.href='hospital_registration.php';</script>";
+        echo "<script>
+        alert('This Hospital registration number is already registered');
+        window.location.href='hospital_registration.php';
+        </script>";
+      }
     }
-    
-    
-    }
-
  else{
     header('location:index.php');
  }
@@ -59,17 +65,25 @@ $unique=$conn->query("SELECT * FROM `receivers` WHERE `aadhar`='$aadhar_number' 
 if(mysqli_num_rows($unique) == 0){
     $result=$conn->query("INSERT INTO `receivers` VALUES (NULL, '$name', '$email', '$hashed_password', '$aadhar_number', CONCAT('registration_uploads/','$filename'),'$blood_group', '$contact', '$city','$state')");
     if($result){
-        echo "<script>alert('Successful');window.location.href='index.php';</script>";
+        echo "<script>
+        alert('Successful');
+        window.location.href='index.php';
+        </script>";
     }
     else{
-        echo "<script>alert('Something Went Wrong :(');window.location.href='receiver_registration.php';</script>";
+        echo "<script>
+        alert('Something Went Wrong :(');
+        window.location.href='receiver_registration.php';
+        </script>";
         
-    }
+       }
     }
     else{
         $erroralert="";
-        echo "<script>alert('This aadhar number or email is already registered');window.location.href='receiver_registration.php';</script>";
-    }
+        echo "<script>alert('This aadhar number or email is already registered');
+        window.location.href='receiver_registration.php';
+        </script>";
+       }
     }
     else{
         header('location:add_blood_info.php');

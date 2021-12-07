@@ -15,9 +15,6 @@
         
     <?php require 'includes/header.php'?>
     
-    <!-- <a href="receiver_registration.php">Receipent/Patient Registeration</a>
-    <a href="hospital_registration.php">Hospital Registeration</a>
-    <a href="login.php">Login</a> -->
     <div class="container-1">
     <div class="intro">
         <div class="intro-content">

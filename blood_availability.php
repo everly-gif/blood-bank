@@ -27,7 +27,12 @@ require 'includes/check_eligible.php';
         $blood_count=mysqli_query($conn,"SELECT SUM(number_of_units) AS blood_count FROM `blood_samples` WHERE `blood_group`='$blood_type'");
         $row = mysqli_fetch_assoc($blood_count); 
         $total_count = $row['blood_count'];
-        echo "<div class='center-flex'><div class='total-blood-count'><div>".$data['blood_group']."</div><div>".$total_count." units</div></div></div>";
+        echo "<div class='center-flex'>
+               <div class='total-blood-count'>
+                <div>".$data['blood_group']."</div>
+                <div>".$total_count." units</div>
+               </div>
+              </div>";
       }
       ?>
     </div>
@@ -42,10 +47,10 @@ require 'includes/check_eligible.php';
         <th>Doctor Recommendation Letter</th>
         <th>Request</th>
       </tr>
-        <?php
-         $query=$conn->query("SELECT blood_samples.hospital_id,blood_samples.blood_group,blood_samples.number_of_units, hospitals.name, hospitals.address, hospitals.city,hospitals.state, hospitals.type
-         FROM blood_samples
-         INNER JOIN hospitals ON hospitals.id =blood_samples.hospital_id WHERE blood_samples.number_of_units>0");
+      <?php
+        $query=$conn->query("SELECT blood_samples.hospital_id,blood_samples.blood_group,blood_samples.number_of_units, hospitals.name, hospitals.address, hospitals.city,hospitals.state, hospitals.type
+        FROM blood_samples
+        INNER JOIN hospitals ON hospitals.id =blood_samples.hospital_id WHERE blood_samples.number_of_units>0");
         while($data=mysqli_fetch_assoc($query)){
           echo "<tr>
           <td>".$data['name']."<br>".$data['address']."<br>".$data['city']." ".$data['address']."</td>
@@ -53,9 +58,16 @@ require 'includes/check_eligible.php';
           <td>".$data['blood_group']."</td>
           <td>".$data['number_of_units']."</td>
           <td><form method='post' action='request_sample_script.php' enctype='multipart/form-data'>
-          <div class='quantity'><div class='decrease'>-</div><input name='hospital_id'  type='text' value='".$data['hospital_id']."' hidden><input name='blood_type'  type='text' value='".$data['blood_group']."' hidden><input type='number' id='".$data['blood_group']."'  min=0 name='number_of_units' max='".$data['number_of_units']."'value=0 readonly><div class='increase'>+</div></div></td>
+            <div class='quantity'>
+            <div class='decrease'>-</div>
+            <input name='hospital_id'  type='text' value='".$data['hospital_id']."' hidden>
+            <input name='blood_type'  type='text' value='".$data['blood_group']."' hidden>
+            <input type='number' id='".$data['blood_group']."'  min=0 name='number_of_units' max='".$data['number_of_units']."'value=0 readonly>
+            <div class='increase'>+</div>
+            </div>
+          </td>
           <td><input type='file' name='file'><br><br></td><td>";
-          if(isset($_SESSION['loggedin'])!=false)
+           if(isset($_SESSION['loggedin'])!=false)
           { 
             if($_SESSION['user_type']=="receiver" && check_if_eligible($_SESSION['user_id'],$data['blood_group']))
             echo "<button name='submit_request' class='rq_sample'  type='submit'> + Request Sample </button></form></td>";
@@ -72,35 +84,8 @@ require 'includes/check_eligible.php';
         ?>
         </table>
     </div>
-    <!--    $query=mysqli_query($conn,"SELECT `id`,`name`,`type`,`address`,`city`,`state` FROM `hospitals`");
-        while($data=mysqli_fetch_assoc($query)){
-        $hospital_id=$data['id'];
-        $availability= mysqli_query($conn,"SELECT `blood_group`,`number_of_units` FROM `blood_samples` WHERE `hospital_id`='$hospital_id'");
-        echo"<tr><td>".$data['name']."<br>".$data['address']."<br>".$data['city']." ".$data['state']." "."</td><td>".$data['type']." "."</td>";
-        echo "<td>";
-        while($total=mysqli_fetch_assoc($availability)){
-            echo $total['blood_group']." (".$total['number_of_units'].")"."  ";
-        }
-        echo"</td>";
-        echo '<td><a class="request_sample"  href="blood_sample_review.php?id='.$hospital_id.'">+Request Sample</a></td>';
-        }<div id="requestModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h4><b>Request Sample</h4></p>
-      <div class="request-form">
-          <form class="modal-form" method="post" action="request_sample_script.php">
-              <label>Blood Group</label>
-              <select>
-                 
-              </select>
-              <label>Number of Units</label><input type="number" name="number_of_units">
-              <button type="submit" name="add_request">Request Sample</button>
-          </form>
-     </div>
-      </div> -->
   </div>
   <?php require 'includes/footer.php';?>
-  <script src="js/request.js"></script>
   <script src="js/count.js"></script>
 </body>
 </html>

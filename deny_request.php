@@ -10,6 +10,10 @@ if($query){
     echo "successful";
     header('location:view_requests.php');
 }
+else{
+    echo "Try Again";
+    header('location:view_requests.php');
+  }
 }
 else{
     header('location:index.php');

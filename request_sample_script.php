@@ -35,7 +35,8 @@ foreach($_POST as $key => $value){
     }
    }
    else{
-    echo "<script>if(confirm('Previous request status is still pending ! check your dashboard'))
+    echo "<script>
+    if(confirm('Previous request status is still pending ! check your dashboard'))
     {
         window.location.href='user_profile.php';
     }

@@ -16,11 +16,16 @@ if(isset($_POST['add_sample'])){
           header('location:add_blood_info.php');
       }
       else{
-          echo "<script>alert('Something went wrong :(');window.location.href='add_blood_info.php';</script>";
+          echo "<script>
+          alert('Something went wrong :(');
+          window.location.href='add_blood_info.php';
+          </script>";
       }
     }
     else{
-        echo "<script>alert('blood group already exists please update the sample instead of adding a new sample');window.location.href='add_blood_info.php';</script>";
+        echo "<script>alert('blood group already exists please update the sample instead of adding a new sample');
+        window.location.href='add_blood_info.php';
+        </script>";
     }
 }
 else{
