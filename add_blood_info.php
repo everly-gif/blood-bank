@@ -51,8 +51,8 @@ require  'includes/session.php';
       <h4><b>New Sample</b></h4>
       <div class="sample-form">
           <form class="modal-form" method="post" action="add_sample_script.php">
-              <label>Blood Group</label><input type="text" name="blood_group">
-              <label>Number of Units</label><input type="number" name="number_of_units">
+              <label>Blood Group</label><input type="text" name="blood_group"required>
+              <label>Number of Units</label><input type="number" name="number_of_units"required>
               <button type="submit" name="add_sample">Add Sample</button>
           </form>
      </div>
@@ -64,8 +64,8 @@ require  'includes/session.php';
       <h4><b>Edit Sample</b></h4>
       <div class="sample-form">
           <form class="modal-form" method="post" action="edit_info.php">
-              <label>Blood Group</label><input type="text" id="blood_group" name="blood_group">
-              <label>Number of Units</label><input type="number" id="units" name="number_of_units">
+              <label>Blood Group</label><input type="text" id="blood_group" name="blood_group"required>
+              <label>Number of Units</label><input type="number" id="units" name="number_of_units"required>
               <button type="submit" name="edit_sample">Update Units</button>
           </form>
      </div>

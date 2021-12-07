@@ -7,7 +7,7 @@ for(var i=0;i<decrease_btn.length;i++){
       var input=btn_clicked.parentElement.children[3];
       var input_value=input.value;
       var newValue=parseInt(input_value)-1;
-      if(newValue>=0){
+      if(newValue>1){
           input.value=newValue;
       }
     }
@@ -19,21 +19,8 @@ for(var i=0;i<increase_btn.length;i++){
       var input_value=input.value;
       var newValue=parseInt(input_value)+1;
       var maximum=input.getAttribute("max");
-      if(newValue<=maximum){
+      if(newValue<=maximum ){
         input.value=newValue;
       }
     }
-}
-var edit_btn=document.getElementsByClassName('edit_btn');
-for(var i=0;i<edit_btn.length;i++){
-  edit_btn[i].onclick=(event)=>{
-    var btn_clicked=event.target;
-    console.log(btn_clicked);
-    // var input=btn_clicked.parentElement.children[3];
-    // var input_value=input.value;
-    // var newValue=parseInt(input_value)-1;
-    // if(newValue>=0){
-    //     input.value=newValue;
-    // }
-  }
 }

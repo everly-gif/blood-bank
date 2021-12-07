@@ -62,11 +62,11 @@ require 'includes/check_eligible.php';
             <div class='decrease'>-</div>
             <input name='hospital_id'  type='text' value='".$data['hospital_id']."' hidden>
             <input name='blood_type'  type='text' value='".$data['blood_group']."' hidden>
-            <input type='number' id='".$data['blood_group']."'  min=0 name='number_of_units' max='".$data['number_of_units']."'value=0 readonly>
+            <input type='number' id='".$data['blood_group']."'  min=0 name='number_of_units' max='".$data['number_of_units']."'value=1 readonly required>
             <div class='increase'>+</div>
             </div>
           </td>
-          <td><input type='file' name='file'><br><br></td><td>";
+          <td><input type='file' name='file' required><br><br></td><td>";
            if(isset($_SESSION['loggedin'])!=false)
           { 
             if($_SESSION['user_type']=="receiver" && check_if_eligible($_SESSION['user_id'],$data['blood_group']))

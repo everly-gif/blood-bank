@@ -18,8 +18,8 @@
     <div class="container-2">
     <form method="post" action="login_submit.php" class="login-form">
     <h1>Login</h1>
-    <label>Email: </label><input type="email"  name="email" >
-    <label>Password: </label><input type="password" name="password">
+    <label>Email: </label><input type="email"  name="email" required>
+    <label>Password: </label><input type="password" name="password" required>
     <button type="submit" name="login">Login</button>
     <div class="form-footer"><p>Don't have an account?</p><br><a href="receiver_registration.php">Register as Receiver</a>
     <a href="hospital_registration.php">Register as Hospital</a></div>
