@@ -1,0 +1,92 @@
+/* Navbar css starts*/
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    box-shadow:0 8px 6px -6px #999;
+}
+.r-nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.logo-cont{
+    display: flex;
+    color:#FF0000;
+}
+.r-nav li{
+    list-style:none;
+    margin:10px;
+}
+.r-nav a{
+    text-decoration: none;
+    padding:1rem;
+    display: block;
+    color:#344fa1;
+    font-weight: 800;
+}
+.logo{
+    margin-bottom: 20px;
+    vertical-align: middle;
+}
+.toggle-button{
+    position: absolute;
+    top:2.3rem;
+    right:1rem;
+    display:none;
+    flex-direction: column;
+    justify-content: space-between;
+    width:30px;
+    height:21px;
+}
+.toggle-button .bar{
+    height:3px;
+    width:100%;
+    border-radius: 10px;
+    background-color: black;
+}
+.dropbtn {
+    background-color: transparent;
+    font-size: 16px;
+    border: none;
+    margin-top: 12px;
+    margin-bottom: 10px;
+  }
+
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width:100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    
+  }
+  
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  
+
+
+/* Navbar css ends*/

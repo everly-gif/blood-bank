@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+*{
+    font-family: 'Urbanist', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.total-blood-count{
+    box-shadow: 3px 3px 5px 6px #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:30px;
+    width:170px;
+    border-radius: 15px;
+    font-size: 1.8vw;
+}
+.container-1{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap:50px;
+    margin-top: 90px;
+   margin-bottom: 80px;
+    
+}
+.center-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+      width:100%;
+      
+}
+td,th{
+    padding: 20px;
+}
+
+th{
+    background-color:#FB9300;
+}
+tr:nth-child(odd){background-color: #ddd;}
+.data{
+    margin: 40px 50px;
+    
+}
+.data{
+    margin-bottom: 90px;
+}
+.rq_sample{
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+    color:#344fa1;
+    font-size: 1.1vw;
+}
+.quantity{
+    display: flex;
+    justify-content: center;
+}
+.decrease{
+    margin-right: 5px;
+    cursor: pointer;
+}
+.increase{
+    margin-left: 5px;
+    cursor: pointer;
+}
+h1{
+    text-align: center;
+    margin-top: 30px;
+}
+input[type="number"]{
+    padding:2px;
+}

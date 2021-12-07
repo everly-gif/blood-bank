@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+*{
+    font-family: 'Urbanist', sans-serif;
+}
+.modal {
+	display: none; 
+	position: fixed; 
+	z-index: 1001; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	overflow: auto; 
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.4); 
+  }
+  
+  
+  .modal-content {
+	background-color: #fefefe;
+	margin: 2% auto; 
+	padding: 20px;
+	border: 1px solid #888;
+	border-radius: 10px;
+	width: 40vw; 
+  }
+  .modal-form{
+      margin:15px;
+  }
+  .modal-form input{
+      width:100%;
+      padding:5px;
+      margin:20px 0px;
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+  .modal-form button{
+	  width:103%;
+	  color:white;
+	  background-color: #EB5310;
+	  border-radius: 8px;
+	  height: 39px;
+	  border: none;
+	  margin-top: 10px;
+	  font-size: 1.38vw;
+	  cursor: pointer;
+  }
+  
+  .close {
+	color: #EB5310;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	margin-top: -5px;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  #warning{
+	  font-weight: 400;
+	  color:red;
+	  text-align: center;
+	  font-size: 1.11vw;
+  }
